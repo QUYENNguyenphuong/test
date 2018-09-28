@@ -37,6 +37,16 @@ body {
     border-bottom: black 1px dotted;
     color: #381eff;
 }
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding:16px;
+}
+.close:hover{
+    color: white;
+    background-color: #ff2f15;
+}
 @media screen and (max-width: 767px) {
     .title {
         font-size: 18px;
