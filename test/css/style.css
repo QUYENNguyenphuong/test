@@ -1,0 +1,56 @@
+body {
+    background-color: #daecff;
+}
+.title {
+    font-size: 24px;
+    color: black;
+    text-align: center;
+}
+.lable1 {
+    color: white;
+}
+.content {
+    width: 50%;
+    margin: auto;
+    background-color: #899eff;
+    padding: 20px 40px;
+}
+.form-control {
+    text-align:left;
+    padding-left: 20px;
+}
+.result {
+    width: 50%;
+    margin: auto;
+    margin-top: 40px;
+    background-color: white;
+    padding-bottom: 10px;
+}
+.list {
+    padding: 0px;
+}
+.list li {
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    font-size:20px;
+    border-bottom: black 1px dotted;
+    color: #381eff;
+}
+@media screen and (max-width: 767px) {
+    .title {
+        font-size: 18px;
+    }
+    .content {
+        width: 80%;
+    }
+    .result {
+        width: 80%;
+    }
+    .form-control {
+        font-size: 12px;
+    }
+    .list li {
+        font-size: 14px;
+    }
+}
