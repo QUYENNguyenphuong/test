@@ -37,5 +37,9 @@ function delete_item(e, item){
 }
 $(document).on('click', '.close', function(e){
     var item = this;
-    delete_item(e, item)
+    var noti = confirm("Do you want delete this item ?");
+    if ( noti == true){
+        delete_item(e, item);
+    }
+
 })
