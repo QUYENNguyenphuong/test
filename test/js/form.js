@@ -21,7 +21,7 @@
 $(document).ready(function () {
     $('#btnAdd').click(function () {
         var name =  $('#myinput').val();
-        if ($('#myinput').val() == '') {
+        if ( name == '') {
             alert("You must write name !")
         }
         else  {
@@ -30,10 +30,12 @@ $(document).ready(function () {
         $('#myinput').val("");
     })
 })
-// function enter
-$('#myinput').change(function () {
-    $('#btnAdd').click();
-})
+//function enter
+ $('#myinput').keyup(function (event) {
+     if ( event.keyCode == 13){
+         $('#btnAdd').click();
+     }
+ })
 
 //function delete
 function delete_item(e, item){
