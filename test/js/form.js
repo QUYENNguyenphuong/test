@@ -30,6 +30,11 @@ $(document).ready(function () {
         $('#myinput').val("");
     })
 })
+// function enter
+$('#myinput').change(function () {
+    $('#btnAdd').click();
+})
+
 //function delete
 function delete_item(e, item){
     e.preventDefault();
