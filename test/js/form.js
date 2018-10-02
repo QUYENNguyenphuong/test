@@ -31,12 +31,11 @@ $(document).ready(function () {
     })
 })
 //function enter
- $('#myinput').keyup(function (event) {
-     if ( event.keyCode == 13){
+ $('#myinput').keyup(function (e) {
+     if ( e.keyCode == 13){
          $('#btnAdd').click();
      }
  })
-
 //function delete
 function delete_item(e, item){
     e.preventDefault();
@@ -48,5 +47,4 @@ $(document).on('click', '.close', function(e){
     if ( noti == true){
         delete_item(e, item);
     }
-
 })
