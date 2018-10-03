@@ -25,7 +25,7 @@ $(document).ready(function () {
             alert("You must write name !")
         }
         else  {
-            $('#ullist').append('<li>' + name + '<input type="button" class="close" value="Delete" >'+'</li>');
+            $('#ullist').append('<li>' + name + '<input type="button" class="close_li" value="Delete" data-toggle="modal" >'+'</li>');
         }
         $('#myinput').val("");
     })
@@ -41,10 +41,15 @@ function delete_item(e, item){
     e.preventDefault();
     $(item).parent().remove();
 }
-$(document).on('click', '.close', function(e){
-    var item = this;
-    var noti = confirm("Do you want delete this item ?");
-    if ( noti == true){
-        delete_item(e, item);
-    }
+// delete button with modal
+$(document).on('click','.close_li', function(e){
+    var  item = this;
+    $('#modal').modal();
+    $('#modal').find('#btn-yes').click(function () {
+        delete_item(e,item);
+        $('#modal').modal('hide');
+        })
+    $('#modal').find('.close').click(function () {
+        $('#modal').modal('hide');
+    })
 })

@@ -36,13 +36,13 @@ body {
     border-bottom: black 1px dotted;
     color: #381eff;
 }
-.close {
+.close_li {
     position: absolute;
     right: 0;
     top: 0;
-    padding: 13px 16px;
+    padding: 10px 16px;
 }
-.close:hover{
+.close_li:hover{
     color: black;
     background-color:red;
 }
