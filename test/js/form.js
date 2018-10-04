@@ -16,7 +16,6 @@
 //       document.getElementById("myinput").value = "";
 //
 // }
-
 // CREATE ELEMENT WHEN CLICK ON ADD BUTTON
 $(document).ready(function () {
     $('#btnAdd').click(function () {
@@ -25,37 +24,39 @@ $(document).ready(function () {
             alert("You must write name !");
         }
         else  {
-            $('#ullist').append('<li>'+  name + '<input type="button" class="close_li" value="Delete" data-toggle="modal" >'+'</li>');
+            $('#ullist').append('<li class="li_item">'+  name + '<input type="button" class="close_li" id="close_li" value="Delete" data-toggle="modal" data-target="#modal">'+'</li>');
         }
         $('#myinput').val("");
-        $('#myinput').focus();
     });
 });
 //function enter
- $('#myinput').keyup(function (e) {
-     if ( e.keyCode == 13){
-         $('#btnAdd').click();
-     }
- });
-//function delete
-function delete_item(e, item){
-    e.preventDefault();
-    $(item).parent().remove();
-}
-
-// delete button with modal
-$(document).on('click','.close_li', function(e){
-    var  item = this;
-    $('#modal').modal();
-    $('#modal').find('#btn-yes').click(function () {
-        delete_item(e,item);
-        $('#modal').modal('hide');
-        });
-    $('#modal').find('.close').click(function () {
+$('#myinput').keyup(function (e) {
+    if ( e.keyCode == 13){
+        $('#btnAdd').click();
+    }
+});
+// Delete function
+$(document).on("click",".li_item", function () {
+   var $item = this;
+    $($item).addClass("delete");
+    $("#btn-yes").click(function () {
+        if($($item).hasClass("delete"))
+        {
+            $($item).remove();
+            $('#modal').modal('hide');
+        }
+    });
+    $("#btn-no").click(function () {
+        $($item).removeClass("delete");
         $('#modal').modal('hide');
     });
+    $(".close").click(function () {
+        $($item).removeClass("delete");
+        $('#modal').modal('hide');
+    })
 });
-// function finish
-$(document).on('click','li', function(){
-    $(this).toggleClass('finish');
-});
+
+
+
+
+
