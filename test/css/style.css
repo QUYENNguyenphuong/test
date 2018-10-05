@@ -19,17 +19,13 @@ body {
     text-align:left;
     padding-left: 20px;
 }
-.result {
-width: 100%;
-}
+
 .list {
-    width: 500px;
+    width: 100%;
     float: left;
     padding: 0px;
     background-color: white;
-    margin-right: 50px;
-    margin-left: 100px;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 .list li {
     position: relative;
@@ -53,13 +49,11 @@ width: 100%;
     text-align: center;
 }
 .completed_list {
+    width: 100%;
     background-color: #ffdde9;
-    width: 500px;
     float: left;
     padding: 0px;
-    margin-right: 50px;
-    margin-left: 50px;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 .completed_list li {
     position: relative;
@@ -72,8 +66,9 @@ width: 100%;
 }
 .complete_li {
     position: absolute;
-    right: 90px;
-    top: 15px;
+    right: 85px;
+    top: 5px;
+    padding: 10px;
 }
 .completed_list .close_li {
     background-color: white;
@@ -96,7 +91,23 @@ width: 100%;
     .form-control {
         font-size: 12px;
     }
+    .list {
+        font-size: 12px;
+    }
+    .completed_list {
+        font-size: 12px;
+    }
+    .close_li {
+        font-size: 9px;
+    }
+    .complete_li {
+        font-size: 9px;
+        right: 70px;
+    }
     .list li {
-        font-size: 14px;
+        font-size: 12px;
+    }
+    .completed_list li {
+        font-size: 12px;
     }
 }

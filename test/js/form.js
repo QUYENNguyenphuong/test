@@ -18,13 +18,14 @@
 // }
 // CREATE ELEMENT WHEN CLICK ON ADD BUTTON
 $(document).ready(function () {
+    $("#myinput").focus();
     $("#btnAdd").click(function () {
         var name = $("#myinput").val();
         if (name == "") {
             alert("You must write name !");
         }
         else {
-            $("#ullist").append('<li class="li_item">' + name + '<input type="checkbox" class="complete_li" id="complete_li" >' + '<input type="button" class="btn btn-primary close_li" id="close_li" value="Delete" data-toggle="modal" data-target="#modal">' + '</li>');
+            $("#ullist").append('<li class="li_item">' + name + '<input type="button"  class="btn btn-primary complete_li" id="complete_li" value="Completed" >' + '<input type="button" class="btn btn-primary close_li" id="close_li" value="Delete" data-toggle="modal" data-target="#modal">' + '</li>');
         }
         $("#myinput").val("");
     });
@@ -56,10 +57,18 @@ $(document).ready(function () {
     });
     $(document).on("click","#complete_li", function () {
        var $item = this;
-       if ($($item).is(":checked")){
           $("#completed_list").append($($item).parent());
           $($item).remove();
-       }
+    });
+
+    $("#myinput").keypress(function () {
+        var max_text = $("#myinput").val().length;
+            if(max_text > 20) {
+                alert("You have reached your maximum limit of characters allowed");
+                $("#myinput").val("");
+            }
+
+
     })
 });
 
